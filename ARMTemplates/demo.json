@@ -1,0 +1,57 @@
+{
+    "Topic": "Azure Devops with Terraform",
+    "TutorName": "Ramakrishna",
+    "CompmayName": "SAANVIK IT Technologies",
+    "Duration": "45 days",
+    "ContactNumber": 9513184144,
+    "IsTheTraininerCertified": true,
+    "address": {
+        "doorNo": 123,
+        "Street": "1st Main Road",
+        "City": "Bangalore",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": 560001
+    },
+
+    "CourseContent": [
+        {
+            "Module": "Azure Devops",
+            "Topics": [
+                "Introduction to Azure DevOps",
+                "Azure Repos",
+                "Azure Pipelines",
+                "Azure Artifacts",
+                "Azure Test Plans"
+            ]
+        },
+        {
+            "Module": "Terraform",
+            "Topics": [
+                "Introduction to Terraform",
+                "Terraform Basics",
+                "Terraform Modules",
+                "Terraform State Management",
+                "Terraform with Azure"
+            ]
+        }
+    ],
+
+    "participants": [
+        {
+            "Name": "Abhinav",
+            "Location": "Hyderabad",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Munesh",
+            "Location": "UK",
+            "IsAzureAdmin": true
+        },
+        {
+            "Name": "Sunil",
+            "Location": "US",
+            "IsAzureAdmin": false
+        }
+    ]
+}

@@ -1,0 +1,552 @@
+90 Days 
+
+Azure Admin - 45 days 
+
+AzureDevops - 45 days 
+    Terraform
+    Bicep
+    Azure boards (Agile)
+    Azure repo (Version control)
+    Azure Pipeline (CI CD )
+    Github Actions 
+
+    Docker 
+    AKS 
+
+Monday - Friday (saturday)
+
+Time: 6:30am IST 
+
+Daily recordings
+Labs 
+
+Interview questions
+
+Assistance certification 
+
+Microsoft Documents 
+
+QA:
+
+
+
+Cloud computing: Access the computing resources (Server, DB, etc) over the internet 
+
+Cloud computing service models:
+
+- IAAS  Infrastructure as a service 
+- PAAS  Platform as a service 
+- SAAS  Software as a service   (Ex: Outlook, Microsoft Teams, Instagram, fb, linkedin etc)
+
+
+Cloud deployment models:
+
+- Public cloud      (Ex: Azure, AWS, GCP, OCI, Alibaba cloud, salesforce, IBM Cloud, VMware cloud etc)
+- Private cloud     (Ex: inhouse, company specific)
+- Hybrid cloud      Public + Private 
+
+Windows Azure - 2010
+Microsoft Azure - 2014 
+
+
+Azure Fundamentals -    AZ-900
+Azure administrator -   AZ-104
+Azure Devops -          AZ-400
+
+
+Agenda:
+------
+1. How to create a free trail account 
+
+    ** Use incognito  window
+    ** NEW EMAIL
+    ** NEW MOBILE 
+    ** NEW CC/DC 
+
+2. Explore Azure portal 
+
+    portal.azure.com 
+
+3. Azure services  -- catageries 
+
+4. Azure pricing calculator
+
+Azure admin 
+
+windows server  4vCPU & 16GB RAM   -- Azure VM
+linux server 
+storage 
+security service 
+loadbalancer 
+
+Estimation of azure services 
+
+
+Agenda:
+------
+
+1. Subscription Overview 
+2. Activity logs 
+3. Azure RBAC (Role based access control) ***
+
+    - Owner         Grant the full access to manage resources, including the ability to assign the Azure RBAC to users 
+    - Contributor   Grant the full access to manage resources, but doesn't have the previlagues to assign the azure RBAC 
+    - Reader        View only acess 
+
+    How to create a customrole
+
+    azureramakrishna@gmail.com 
+
+
+Agenda:
+------
+1. Azure tags
+            Tags are name/value pairs that enable you to categorize resources
+
+2. Azure Policies 
+            To setup Goveranance and compliance for you azure subscripitons
+
+3. Azure Resource Locks 
+
+4. Azure Heirarchy
+
+       Microsoft Entra ID (Formarly Azure Activie Directory)
+            \_
+                Management groups 
+                    \_
+                        Subscripitons 
+                            \_
+                                ResourceGroups
+                                    \_
+                                        Resources 
+
+
+
+Active directory:   Identity and access management 
+----------------
+
+onprem solution
+
+Windows Server --> ADDS (Active directory domain services)
+
+
+Microsoft etnra ID (Formarly Azure active directory): Cloud managed, identity and access management 
+----------------------------------------------------
+- SSO (Single sing on)
+- SSPR (Self service password reset) 
+- RBAC 
+- Security monitoring 
+- MFA 
+
+- License 
+    Microsoft Entra ID Free
+    Microsoft Entra ID P1 
+    Microsoft Entra ID P2
+
+
+Agenda:
+------
+ASM vs ARM 
+
+Deployment models
+
+2010 - Windows Azure    ASM - Azure Service Manager
+2014 - Microsoft Azure  ARM - Azure Resource Manager 
+
+What is ARM? 
+
+
+How many ways we can create resources in azure portal 
+
+- Azure Portal 
+- Azure Powershell  
+        Login-AzAccount / Connect-AzAccount 
+        Logout-AzAccount / Disconnect-AzAccount 
+
+        Get-AzSubscription 
+        Get-AzResourceGroup
+        Get-AzVM 
+
+        New-AzResourceGroup -Name powershell -Location UkSouth
+
+        Remove-AzResourceGroup -Name powershell -Force 
+
+- Azure CLI 
+        az login 
+
+        az account list 
+
+        az group list 
+
+        az group create -n cli -l westus
+
+        az group delete -n cli -y 
+
+
+- ARM Templates (IaC)
+- Bicep
+- Terraform 
+
+
+
+
+IP Address (Internet protocal)
+------------------------------
+
+IPv4 - 32 bit       0.0.0.0 - 255.255.255.255
+IPv6 - 128 bit 
+
+
+Class A     0.0.0.0   - 127.255.255.255
+            10.0.0.0 to 10.255.255.255      
+
+Class B     128.0.0.0 - 191.255.255.255
+            172.16.0.0 to 172.31.255.255 
+
+Class C     192.0.0.0 - 223.255.255.255
+            192.168.0.0 to 192.168.255.255 
+
+Class D     224.0.0.0 - 239.255.255.255
+Class E     240.0.0.0 - 255.255.255.255
+
+
+ipconfig
+
+IPv4 Address: 192.168.3.6
+
+CIDR:
+----
+10.0.0.0/16     = 2^32-16 = 2^16 = 65536 (5 Reserved IPs) = 65531
+10.0.0.0/24     = 2^32-24 = 2^8  = 256 (5 Reserved IPs) = 251
+10.0.0.0/25     = 2^32-25 = 2^7  = 128 (5 Reserved IPs) = 123
+10.0.0.0/27     = 2^32-27 = 2^5  = 32 (5 Reserved IPs) = 27
+10.0.0.0/29  =                = 8 (5 Reserved IPs) = 3
+10.0.0.0/30     =                = 4 
+
+
+
+10.0.0.0/29 
+
+10.0.0.0 - 10.0.0.7
+
+10.0.0.0    Network address.
+10.0.0.1    Reserved by Azure for the default gateway.
+10.0.0.2    Reserved by Azure to map the Azure DNS IP addresses to the virtual network space.
+10.0.0.3    Reserved by Azure to map the Azure DNS IP addresses to the virtual network space.
+10.0.0.4
+10.0.0.5
+10.0.0.6
+10.0.0.7    Network broadcast address.
+
+
+Azure Virtual Network:
+---------------------
+
+
+Azure Windows Virtual Machine:
+---------------------
+
+Onprem - Server 
+VMWare - VM 
+AWS - Instance 
+Azure - VM
+
+What do I need to think about before creating a virtual machine?
+
+- The names of your resources
+- The location where the resources are stored
+- The size of the virtual machine
+- The maximum number of virtual machines that can be created
+- The operating system that the virtual machine runs
+    Windows - Windows Server 2016, Windows Server 2019 and Windows servcer 2022
+    Linux   - Ubuntu 20.04 LTS & 24.04 LTS, RHEL 7, 8, 9, SUSE Linux etc
+- The configuration of the virtual machine after it starts
+- The related resources that the virtual machine needs  - Datadisk 
+- Required RBAC RBAC on Subscripiton - Contributor 
+
+
+Create Azure windows VM 
+RDP client 
+windows VM - 3389 
+webserver - 80
+Webserber - IIS (Internet informtation services)
+
+
+Agenda:
+------
+1. High availability 
+    - Availability Set 
+    - Availability zone 
+
+2. Linux VM -> Apache 2 -> sample web application.
+
+
+Custome Image:
+-------------
+
+Product Engineering (PE) - Building Images (Golden Images)
+
+
+Windows VM                --> Image --> New VM 
+    - Azure Powershll 
+    - Azure CLI 
+    - Putty 
+    - WSL 
+    - Git 
+    - Eclip 
+
+Azure Compute gallery (Formarly Shared image gallery):
+
+
+Azure storage accounts:
+----------------------
+
+Azure storage account types:
+---------------------------
+1. Standard general-purpose v2      Blob Storage, Queue Storage, Table Storage, and Azure Files
+2. Premium block blobs              Blob Storage
+3. Premium file shares              Azure Files
+4. Premium page blobs               Page blobs only
+
+
+Azure storage service types:
+----------------------------
+
+- Blob (Binary large object)
+    - Page blob 
+    - Append blob 
+    - Block blob 
+
+- File share 
+- Queues 
+- Table 
+
+
+Redundancy options:
+------------------
+1. LRS          Locally redundant storage - 3 copies in primary region 
+2. ZRS          Zone-redundant storage    - 3 copies in primary region in AZ 
+3. GRS          Geo-redundant storage     - 3 copies in primary LRS & 3 copies in secondary region in LRS & no read access to secondary region 
+4. RA-GRS       Read Acess Geo-redundant storage - 3 copies in primary & 3 copies in secondary region & read access to secndary region 
+5. GZRS         Geo-zone-redundant storage - 3 copies in primary with ZRS & 3 copies in secondary with LRS 
+6. RA-GZRS      Read access Geo-zone-redundant storage - 3 copies in primary with ZRS & 3 copies in secondary with LRS & read access secondary region 
+
+Endpoints:
+---------
+
+Storage service	                    Endpoint
+---------------                     --------
+Blob Storage	                    https://<storage-account>.blob.core.windows.net
+Static website (Blob Storage)	    https://<storage-account>.web.core.windows.net
+Data Lake Storage	                https://<storage-account>.dfs.core.windows.net
+Azure Files	                        https://<storage-account>.file.core.windows.net
+Queue Storage	                    https://<storage-account>.queue.core.windows.net
+Table Storage	                    https://<storage-account>.table.core.windows.net
+
+
+Access tiers:
+------------
+
+Hot tier - An online tier optimized for storing data that is accessed or modified frequently. The hot tier has the highest storage costs, but the lowest access costs.
+Cool tier - An online tier optimized for storing data that is infrequently accessed or modified. Data in the cool tier should be stored for a minimum of 30 days. The cool tier has lower storage costs and higher access costs compared to the hot tier.
+Cold tier - An online tier optimized for storing data that is rarely accessed or modified, but still requires fast retrieval. Data in the cold tier should be stored for a minimum of 90 days. The cold tier has lower storage costs and higher access costs compared to the cool tier.
+Archive tier - An offline tier optimized for storing data that is rarely accessed, and that has flexible latency requirements, on the order of hours. Data in the archive tier should be stored for a minimum of 180 days.
+
+Performance tiers:
+-----------------
+ 
+Standard - HDD 
+Premium  - SSD 
+
+Life cycle management rules
+
+Statick webiste 
+
+
+Fileshare:
+---------
+
+Queues 
+
+Tables 
+
+Azure CDN (Content Delivery Network):
+------------------------------------
+
+
+1. Storage Explorer     (GUI)
+2. AzCopy               CommandLine 
+
+
+Azure Backup:
+------------
+    The Azure Backup service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud.
+
+Backup type:
+
+- Full Backup               Used for initial backup.
+- Differential Backup       A differential backup stores the blocks that changed since the initial full backup.
+- Incremental Backup        An incremental backup stores only the blocks of data that changed since the previous backup.
+
+
+Azure VM Backup:
+---------------
+1. Create a Recovery services vault 
+2. go to azure backup service 
+3. choose your target --> Azure -> VM
+4. Configure backup 
+5. Create policy -> Enhances --> take hourly backup 
+6. Add the VM 
+7. Enable Backup 
+
+
+Azure Monitoring & Alerts:
+-------------------------
+
+Azure Monitor --> Metrics, logs and alerts 
+
+
+
+
+Azure Virtual Network connectivities:
+------------------------------------
+1. Azure VNET Peering  - Private connection 
+    - Regional VNET Peering (VNET1 & VNET2 are in same region ex: Eastus)
+    - Global VNET Peering  (VNET1- Eastus & VNET2 UKSouth)
+
+    *** Pre-requisite 
+        IP's Shouldn't overlap 
+        VNET01 - 10.0.0.0/23        10.0.0.0 - 10.0.1.255  - 512
+
+                10.0.0.0 - 10.0.0.255 (256)
+                10.0.1.0 - 10.0.1.255 (256)
+
+        VNET02 - 10.0.0.0/24        10.0.0.0 - 10.0.0.255
+
+                 
+
+2. Azure VNET to VNET VPN  - Public connection 
+
+3. Azure Site to Site VPN 
+
+4. Azure Express Route 
+
+5. Azure Point to site VPN 
+
+6. Azure Network security group (NSG):
+    Associate NSG to:
+                    - Subnet 
+                    - NIC 
+
+
+
+Agenda:
+------
+
+1. Azure Keyvault (PAAS)
+    Azure Key Vault is one of several key management solutions in Azure, and helps solve the following problems:
+
+Secrets Management - Azure Key Vault can be used to Securely store and tightly control access to tokens, passwords, certificates, API keys, and other secrets
+Key Management - Azure Key Vault can be used as a Key Management solution. Azure Key Vault makes it easy to create and control the encryption keys used to encrypt your data.
+Certificate Management - Azure Key Vault lets you easily provision, manage, and deploy public and private Transport Layer Security/Secure Sockets Layer (TLS/SSL) certificates for use with Azure and your internal connected resources.
+
+2. Azure AppRegistration (Service Principal) - saanvikit
+
+    Client_id: 86347c35-7d96-47c8-b981-f7ecb1ac4dfa
+    Secret: 9tT8Q~1pWYojU2Iohs~hsInFjVf0tdbktrdCYbBB
+
+    Tenant_id: 459865f1-a8aa-450a-baec-8b47a9e5c904
+
+    az login --service-principal --username 86347c35-7d96-47c8-b981-f7ecb1ac4dfa --password 9tT8Q~1pWYojU2Iohs~hsInFjVf0tdbktrdCYbBB --tenant 459865f1-a8aa-450a-baec-8b47a9e5c904
+
+3. Azure Managed Identities
+    - System Assigned Managed Identity 
+    - User Assigned Managed Identity 
+
+
+Agenda:
+------
+
+Azure App services (PAAS)
+
+- Web App 
+- Logic App 
+- Functions Apps 
+
+
+E-commerce website - Azure VM --> IAAS 
+                   - Web App  --> PAAS 
+
+
+
+www.volbo.com 
+
+    |
+    
+saanvikit7.azurewebsites.net
+
+
+Azure Loadbalancing services:
+----------------------------
+
+1. Azure Loadbalancer
+    - OSI Layer 4 
+    - SKU: Standard & Gateway 
+    - BackendPool: VM & VMSS 
+    - Supports only HTTP (80) traffic
+
+2. Application Gateway 
+    - OSI Layer 7
+    - SKU: Small, Medium & Large 
+    - BackendPool: VM 
+                   VMSS 
+                   App Services 
+                   IP Address & FQDN (saanvikit.com)
+    - Path based routing  Ex: saanvikit.com/services saanvikit.com/contactus
+    - Multisite hosting 
+    - SSL Offloading 
+    - Session affinity 
+    - WAF (Web Application Firewall)
+
+3. Traffic Manager 
+    Azure Traffic Manager is a DNS-based traffic load balancer. This service allows you to distribute traffic to your public facing applications across the global Azure regions
+    
+    - DNS Based traffic loadbalancer 
+    - Supports only HTTP 
+    - Endpoints 
+        Cloud Services 
+        AppServices 
+        PublicIP
+
+4. Azure Front door 
+    Application Gateway + Traffic Manager + CDN 
+
+
+
+Azure SQL DB:
+------------
+
+1. Azure SQL Database - PAAS 
+2. SQL Managed instances - IAAS 
+3. SQL Virtual Machine - IAAS 
+    - Azure SQL on Virtual Machine 
+    - SSMS (SQL Server Management studio)
+
+- Subnet: 
+    Service Endpoints 
+    Deligation 
+
+- Azure Bastion:
+
+
+
+ARMTemplates - JSON 
+Terraform 
+AzureDevops 
+    Azure Boards (Agile)
+    Azure Repo (Git & Github)
+    Azure Pipelines (CI CD) - YAML 
+GitHub Actions (CI CD)
+Docker 
+AKS
+
