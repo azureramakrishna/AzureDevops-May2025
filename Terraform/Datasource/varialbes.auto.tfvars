@@ -1,0 +1,17 @@
+resource_group_name = "rg-vnet"
+tags = {
+  environment = "DEV"
+  project     = "terraform"
+}
+storage_account_name        = "Terraformsa2205205"
+subscription_id             = "2e28c82c-17d7-4303-b27a-4141b3d4088f"
+virtual_network_name        = "test-vnet"
+subnet_name                 = "public-subnet"
+network_security_group_name = "terraform-nsg"
+public_ip_name              = "terraform-public-ip"
+network_interface_name      = "terraform-nic"
+virtual_machine_name        = "terraform-vm"
+virtual_machine_size        = "Standard_D2s_v3"
+adminUser                   = "azureuser"
+keyvault_name               = "terraformkv123"
+keyvault_secret_name        = "VMPassword"
