@@ -89,7 +89,7 @@ resource "azurerm_subnet_network_security_group_association" "example" {
 
 # Create a Public IP Address
 resource "azurerm_public_ip" "pip" {
-  name                = var.public_ip_name
+  name                = "${var.public_ip_name}-${count.index}"
   count               = var.count_value
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
@@ -100,7 +100,7 @@ resource "azurerm_public_ip" "pip" {
 
 # Create a NIC
 resource "azurerm_network_interface" "nic" {
-  name                = var.network_interface_name
+  name                = "${var.network_interface_name}-${count.index}"
   count               = var.count_value
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -109,13 +109,13 @@ resource "azurerm_network_interface" "nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.pip.id
+    public_ip_address_id          = azurerm_public_ip.pip[count.index].id
   }
 }
 
 # Create VM
 resource "azurerm_windows_virtual_machine" "vm" {
-  name                = var.virtual_machine_name
+  name                = "${var.virtual_machine_name}-${count.index}"
   count               = var.count_value
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
@@ -123,11 +123,11 @@ resource "azurerm_windows_virtual_machine" "vm" {
   admin_username      = var.adminUser
   admin_password      = var.adminPassword
   network_interface_ids = [
-    azurerm_network_interface.nic.id,
+    azurerm_network_interface.nic[count.index].id,
   ]
 
   os_disk {
-    name                 = "${var.virtual_machine_name}-osdisk"
+    name                 = "${var.virtual_machine_name}-osdisk-${count.index}"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
