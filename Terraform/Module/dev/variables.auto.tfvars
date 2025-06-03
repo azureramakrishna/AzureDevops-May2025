@@ -1,0 +1,19 @@
+resource_group_name = "dev-rg-terraform"
+tags = {
+  environment = "DEV"
+  project     = "terraform"
+}
+location                      = "eastus"
+storage_account_name          = "saanvikitdevsa"
+subscription_id               = "2e28c82c-17d7-4303-b27a-4141b3d4088f"
+virtual_network_name          = "dev-vnet"
+virtual_network_address_space = ["10.0.0.0/24"]
+subnet_address_prefixes       = ["10.0.0.0/24"]
+subnet_name                   = "dev-subnet"
+network_security_group_name   = "dev-nsg"
+public_ip_name                = "dev-public-ip"
+network_interface_name        = "dev-nic"
+virtual_machine_name          = "dev-vm"
+virtual_machine_size          = "Standard_DS1_v2"
+adminUser                     = "azureuser"
+adminPassword                 = "Azuredevops@12345"

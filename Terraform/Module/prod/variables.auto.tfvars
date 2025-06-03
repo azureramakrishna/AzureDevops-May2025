@@ -1,0 +1,19 @@
+resource_group_name = "prod-rg-terraform"
+tags = {
+  environment = "prod"
+  project     = "terraform"
+}
+location                      = "eastus"
+storage_account_name          = "saanvikitprodsa"
+subscription_id               = "2e28c82c-17d7-4303-b27a-4141b3d4088f"
+virtual_network_name          = "prod-vnet"
+virtual_network_address_space = ["10.0.2.0/24"]
+subnet_address_prefixes       = ["10.0.2.0/24"]
+subnet_name                   = "prod-subnet"
+network_security_group_name   = "prod-nsg"
+public_ip_name                = "prod-public-ip"
+network_interface_name        = "prod-nic"
+virtual_machine_name          = "prod-vm"
+virtual_machine_size          = "Standard_DS1_v2"
+adminUser                     = "azureuser"
+adminPassword                 = "Azuredevops@12345"
