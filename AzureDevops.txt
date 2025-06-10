@@ -27,3 +27,154 @@ link: https://developer.hashicorp.com/terraform/install
 
 copy terraform.exe --> c:/windows 
 
+
+Introduction to Devops
+
+AzurePortal: https://portal.azure.com
+AzureDevops: https://dev.azure.com
+             https://aex.dev.azure.com/
+
+             https://dev.azure.com/SAANVIKIT-May2025/
+
+Azure Boards:
+
+Agile Process:
+-------------
+Iterations (Sprints) - 2 weeks --> Team 
+      Sprint1  9 June - 20 June
+      Sprint2  23 June - 4 July
+      Sprint3  ...
+
+Backlogs --> what are the  items that you wanted to deliver 
+
+Sprint planning:
+
+-> Capacity planning 
+-> Backlogs (Userstories)
+-> Task - hours 
+
+Daily standup calls --> status of the work. 
+
+End of the sprint:
+
+Retrospectice 
+   What went well
+   What didn't went well
+   What can be improved
+
+
+Agile:
+-----
+
+Epic 
+   \_
+      Feature
+         \_
+            User Story 
+               \_
+                  Task 
+                     \_
+                        Bug / Issue
+
+
+Amazon.in 
+
+Epic  -  Build a ecomerce website 
+
+Feature - Sing-up page 
+          Login page 
+          Home page 
+          Products page
+          Cart page 
+          Payment gateway 
+          Invoice 
+          Tracking 
+          Support 
+          Feedback
+
+User Story - Sign-up with google account 
+             Sign-up with apple account 
+             Sign-up with x account 
+             Sign-up with username and password 
+
+             Login with google account 
+             Login with apple account 
+             Login with x account 
+             Login with username and password 
+
+             Home page with multiple category of projects 
+
+             Products catelog based on different categories 
+
+Azure Repo: 
+----------
+
+Git - Distributed version contrl system
+
+
+git commands:
+------------
+
+
+ 2329  git
+ 2330  git clone https://SAANVIKIT-May2025@dev.azure.com/SAANVIKIT-May2025/Iac/_git/Iac
+ 2331  cd Iac/
+ 2332  ls
+ 2333  ls -a
+ 2334  cd .git/
+ 2335  l
+ 2336  cd ..
+ 2337  pwd
+ 2338  clear
+ 2339  git config --global user.name "Ramakrishna"
+ 2340  git config --global user.email azureramakrishna@gmail.com
+ 2341  git config info
+ 2342  git config --list
+ 2343  git status
+ 2344  git add .
+ 2345  git status
+ 2346  git commit -m "Added ARMTemplates"
+ 2347  git push origin main
+ 2348  git status
+ 2349  git add .
+ 2350  git status
+ 2351  git commit -m "updated the README.md"
+ 2352  git status
+ 2353  git push origin main
+ 2354  history
+ 2355  git remote -v
+ 2356  git fetch --all
+ 2357  git branch --all
+ 2358  git checkout develop
+ 2359  git checkout -b feature/vm-resize
+ 2360  git status
+ 2361  git add .
+ 2362  git status
+ 2363  git commit -m "vm resize"
+ 2364  git status
+ 2365  git push origin feature/vm-resize
+ 2366  git status
+ 2367  git add .
+ 2368  git commit -m "removed the vm password"
+ 2369  git push origin feature/vm-resize
+ 2370* ssh azureuser@52.234.143.11
+ 2371  git branch --all
+ 2372  git checkout develop
+ 2373  git fetch origin develop
+ 2374  git pull origin develop
+ 2375  git checkout -b feature/remove-ps
+ 2376  git status
+ 2377  git add .
+ 2378  git commit -m "removed the pwrsh file"
+ 2379  git push origin feature/remove-ps
+ 2380  git branch
+ 2381  git checkout develop
+ 2382  git branch -d feature/remove-ps
+ 2383  git merge feature/remove-ps
+ 2384  git branch -D feature/remove-ps
+ 2385  git branch -D feature/vm-resize
+ 2386  git branch
+ 2387  git branch --all
+ 2388  git push origin -d feature/remove-ps
+
+ 
