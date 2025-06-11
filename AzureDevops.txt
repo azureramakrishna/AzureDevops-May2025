@@ -177,4 +177,21 @@ git commands:
  2387  git branch --all
  2388  git push origin -d feature/remove-ps
 
- 
+
+ Azure Pipelines: CI CD 
+ ---------------
+
+ Pre-requisites:
+ --------------
+
+ 1. Service Connection 
+
+ 2. Aget pool 
+      - Microsoft Hosted agent pool 
+         Request Form: https://aka.ms/azpipelines-parallelism-request
+         
+      - Self hosted agent pool 
+
+3. Azure Pipelines 
+   - Classic editor - UI
+   - YAML pipelines - Pipeline As a code (YAML)
