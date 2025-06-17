@@ -1,0 +1,46 @@
+---
+Topic: 'AzureDevops With Terraform'
+TutorName: Ramakrishna
+CompanyName: 'SAANVIK IT Technologies pvt ltd'
+Duration: 45Days
+ContactNumber: 9513184144
+IsTheTrainderCertified: true 
+
+address:
+  city: Hyderabad
+  state: Telangana
+  country: India
+  pincode: 500062
+
+CourseContent: 
+- Module: AzureDevops
+  Topics:
+    - 'Introduction to Azure DevOps'
+    - 'Azure Repos'
+    - 'Azure Pipelines'
+    - 'Azure Artifacts'
+    - 'Azure Test Plans'
+    - 'Azure Boards'
+
+- Module: Terraform
+  Topics:
+    - 'Introduction to Terraform'
+    - 'Terraform Configuration Files'
+    - 'Terraform Providers'
+    - 'Terraform Modules'
+    - 'Terraform State Management'
+    - 'Terraform Workspaces'
+
+Participants:
+- Name: 'Abhinav'
+  Location: Hyderabad
+  IsAzureAdmin: true
+
+- Name: 'Munesh'
+  Location: UK
+  IsAzureAdmin: true
+
+- Name: 'Sunil'
+  Location: US
+  IsAzureAdmin: true
+

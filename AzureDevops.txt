@@ -195,3 +195,20 @@ git commands:
 3. Azure Pipelines 
    - Classic editor - UI
    - YAML pipelines - Pipeline As a code (YAML)
+
+
+Build & deploy to Java web app:
+------------------------------
+
+Get the code: https://github.com/spring-projects/spring-petclinic
+
+Create an Azure App Service:
+
+# Create a resource group
+az group create --location eastus2 --name myapp-rg
+
+# Create an app service plan of type Linux
+az appservice plan create -g myapp-rg -n myapp-service-plan --is-linux
+
+# Create an App Service from the plan with Tomcat and JRE 8 as the runtime
+az webapp create -g myapp-rg -p myapp-service-plan -n saanvikit-petclinic --runtime "TOMCAT|8.5-jre8"
