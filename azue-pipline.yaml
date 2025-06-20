@@ -1,0 +1,103 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: 
+  branches:
+    include:
+    - main
+    - develop
+    - feature/*
+  paths:
+    include:
+    - Terraform/VirtualMachine
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: Secrets
+
+stages:
+- stage: Build
+  displayName: "Build Stage"
+  jobs:
+  - job: BuildJob
+    displayName: "Build Terraform"
+
+    steps:
+    - checkout: self
+
+    - task: CopyFiles@2
+      displayName: 'Copy Files'
+      inputs:
+        SourceFolder: 'Terraform/VirtualMachine'
+        Contents: '**.tf'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Build Artifact'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: Release
+  displayName: "Release Stage"
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - job: ReleaseJob
+    displayName: "Deploy Terraform"
+
+    steps:
+    - task: DownloadBuildArtifacts@1
+      displayName: 'Download build artifacts'
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(System.DefaultWorkingDirectory)'
+    
+    - task: TerraformInstaller@1
+      displayName: 'Terraform Install'
+      inputs:
+        terraformVersion: 'latest'
+    
+    - task: TerraformTask@5
+      displayName: 'Terraform init'
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/drop'
+        backendAzureRmUseEntraIdForAuthentication: false
+        backendServiceArm: 'saanvikit-azure-connection'
+        backendAzureRmResourceGroupName: 'rg-terraform'
+        backendAzureRmStorageAccountName: 'saanvikitterraform'
+        backendAzureRmContainerName: 'tfstate'
+        backendAzureRmKey: 'pipeline.terraform.tfstate'
+    
+    - task: TerraformTask@5
+      displayName: 'Terraform validate'
+      inputs:
+        provider: 'azurerm'
+        command: 'validate'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/drop'
+    
+    - task: AzureCLI@2
+      displayName: 'Azure CLI '
+      inputs:
+        azureSubscription: 'saanvikit-azure-connection'
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          echo "Logged into Azure CLI"
+          az account show
+          
+          echo "Changing to Terraform config directory..."
+          cd "$(System.DefaultWorkingDirectory)/drop"
+          
+          terraform plan -var "adminPassword=$(VMPassword)"
+          
+          terraform apply -var "adminPassword=$(VMPassword)" -auto-approve

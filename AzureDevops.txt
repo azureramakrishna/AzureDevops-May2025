@@ -212,3 +212,63 @@ az appservice plan create -g myapp-rg -n myapp-service-plan --is-linux
 
 # Create an App Service from the plan with Tomcat and JRE 8 as the runtime
 az webapp create -g myapp-rg -p myapp-service-plan -n saanvikit-petclinic --runtime "TOMCAT|8.5-jre8"
+
+
+Github-Actions: CI CD 
+--------------
+
+Github Runners:
+   - Github Hosted Runners 
+   - Self hosted github runners
+
+
+
+Docker:
+-------
+Package your application dependencies, binaries, application code in to a image.
+
+    2  docker ps
+    3  docker attach saanvikit
+    4  docker attach saanvikit1
+    5  clear
+    6  docker ps
+    7  docker attach saanvikit1
+    8  ls
+    9  vi index.js
+   10  vi package.json
+   11  vi Dockerfile
+   12  ls
+   13  ll
+   14  docker built -t node-app .
+   15  docker build -t node-app .
+   16  docker imges
+   17  docker images
+   18  docker run --name mynodeapp -p 3000:3000 node-app
+   19  docker ps
+   20  docker ps -a
+   21  docker start mynodeapp
+   22  docker ps
+   23  curl 0.0.0.0:3000
+   24  docker stats
+   25  docker ps
+   26  docker inspect b6b8
+   27  docker images
+   28  docker inspect node-app
+   29  ¬
+   30  docker ps
+   31  docker stop 63b9
+   32  docker ps
+   33  docker start b6b8d2b239c8
+   34  doker ps
+   35  docker ps
+   36  docker start 63b9
+   37  docker ps
+   38  docker ps -a
+   39  docker rm 2dd1706a3556
+   40  docker ps -a
+   41  docker rm b6b8d2b239c8 63b94b59b897 d4ae1b5fa72c
+   42  docker ps -a
+   43  docker ps
+   44  docker stop b6b8d2b239c8 63b94b59b897
+   45  docker ps
+   46  docker images
